@@ -1,0 +1,19 @@
+.sliderThumb {
+  width: 12px;
+  height: 25px;
+  border-radius: 120px;
+  position: relative;
+  top: -5px;
+  background-color: #823eb3;
+  cursor: pointer;
+}
+
+.slider {
+  display: flex;
+}
+.sliderBar {
+  position: relative;
+  border-radius: 3px;
+  background: #dddddd;
+  height: 15px;
+}

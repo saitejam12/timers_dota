@@ -1,0 +1,55 @@
+.number {
+  color: black;
+  display: inline-block;
+}
+.numberUp {
+  display: inline-block;
+  animation: rotate-up 0.25s;
+}
+.numberDown {
+  display: inline-block;
+  animation: rotate-down 0.25s;
+}
+
+@keyframes rotate-up {
+  0% {
+    color: green;
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  75% {
+    color: green;
+    transform: translateY(10px);
+  }
+  100% {
+    color: green;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes rotate-down {
+  0% {
+    color: orangered;
+    transform: translateY(50px);
+    opacity: 1;
+  }
+  75% {
+    color: orangered;
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    color: orangered;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes turn-black {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    color: black;
+  }
+}

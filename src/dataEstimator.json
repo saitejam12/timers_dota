@@ -1,0 +1,238 @@
+{
+  "videoAndGameActivities": [
+    {
+      "serial_number": 1,
+      "question": "How often do you watch video?",
+      "details": "Netflix, Hulu, YouTube, Amazon Video, etc...",
+      "per_hour": 700,
+      "hd_per_hour": 2000,
+      "quality": "sd",
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "showSelectionBar": true,
+          "floor": 0,
+          "ceil": 24,
+          "step": 0.5,
+          "precision": 1,
+          "autoHideLimitLabels": true,
+          "slider": true
+        }
+      }
+    },
+    {
+      "serial_number": 2,
+      "question": "How often do you listen to music?",
+      "details": "Spotify, Apple Music, Amazon Music, Soundcloud, etc..",
+      "per_hour": 55,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "showSelectionBar": true,
+          "floor": 0,
+          "ceil": 24,
+          "step": 0.5,
+          "precision": 1,
+          "autoHideLimitLabels": true,
+          "slider": true
+        }
+      }
+    },
+    {
+      "serial_number": 3,
+      "question": "How often do you play online games?",
+      "details": "Fortnite, Dota 2, Call of Duty, Minecraft",
+      "per_hour": 34,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "showSelectionBar": true,
+          "floor": 0,
+          "ceil": 24,
+          "step": 0.5,
+          "precision": 1,
+          "autoHideLimitLabels": true,
+          "slider": true
+        }
+      }
+    },
+    {
+      "serial_number": 4,
+      "question": "How often do you use video calling?",
+      "details": "Skype, FaceTime, Google Duo or Hangouts.",
+      "per_hour": 200,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "floor": 0,
+          "ceil": 1.5,
+          "step": 0.5,
+          "precision": 1,
+          "showTicksValues": true,
+          "autoHideLimitLabels": true,
+          "slider": false
+        }
+      }
+    }
+  ],
+  "otherActivities": [
+    {
+      "serial_number": 1,
+      "question": "How often do you browse websites Daily?",
+      "per_hour": 80,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "floor": 0,
+          "ceil": 1.5,
+          "step": 0.5,
+          "precision": 1,
+          "showTicksValues": true,
+          "autoHideLimitLabels": true,
+          "slider": false
+        }
+      }
+    },
+    {
+      "serial_number": 2,
+      "question": "How often do you Use E-mail Daily?",
+      "per_hour": 7.5,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "floor": 0,
+          "ceil": 1.5,
+          "step": 0.5,
+          "precision": 1,
+          "showTicksValues": true,
+          "autoHideLimitLabels": true,
+          "slider": false
+        }
+      }
+    },
+    {
+      "serial_number": 3,
+      "question": "How often do you upload/download files Daily?",
+      "details": "Share files, download songs, apps, etc...",
+      "per_hour": 4.5,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "floor": 0,
+          "ceil": 1.5,
+          "step": 0.5,
+          "precision": 1,
+          "showTicksValues": true,
+          "autoHideLimitLabels": true,
+          "slider": false
+        }
+      }
+    }
+  ],
+  "socialActivities": [
+    {
+      "serial_number": 1,
+      "question": "How often do you use Social Media?",
+      "details": "Facebook, Twitter, Instagram, Snapchat",
+      "per_hour": 91,
+      "total": 0,
+      "slider": {
+        "value": 0,
+        "options": {
+          "floor": 0,
+          "ceil": 1.5,
+          "step": 0.5,
+          "precision": 1,
+          "showTicksValues": true,
+          "autoHideLimitLabels": true,
+          "slider": false
+        }
+      }
+    }
+  ],
+  "homeSecurityIOT": [
+    {
+      "serial_number": 1,
+      "question": "Do you have any Security Cameras?",
+      "answer": "0",
+      "sd_per_hour": 0.05,
+      "hd_per_hour": 3114,
+      "total": 0,
+      "how_many": 0,
+      "hint": "",
+      "quality": "sd"
+    },
+    {
+      "serial_number": 2,
+      "question": "Do you have Smart Home Devices?",
+      "details": "Nest Thermostat, Smart Fridge, Amazon Echo",
+      "answer": "0",
+      "sd_per_hour": 0.05,
+      "hd_per_hour": 3114,
+      "total": 0,
+      "how_many": 0,
+      "hint": "",
+      "quality": "sd"
+    }
+  ],
+  "activityTypes": [
+    {
+      "typeId": 1,
+      "title": "Watching Video & Gaming",
+      "isSelected": false,
+      "isClicked": false,
+      "total": 0,
+      "no_of_ques": 4,
+      "no_of_anaswer": 0,
+      "alias": "videoAndGameActivities"
+    },
+    {
+      "typeId": 2,
+      "title": "Using Social Media",
+      "isSelected": false,
+      "isClicked": false,
+      "total": 0,
+      "no_of_ques": 1,
+      "no_of_anaswer": 0,
+      "alias": "socialActivities"
+    },
+    {
+      "typeId": 3,
+      "title": "Home Security",
+      "isSelected": false,
+      "isClicked": false,
+      "total": 0,
+      "no_of_ques": 2,
+      "no_of_anaswer": 0,
+      "alias": "homeSecurityIOT"
+    },
+    {
+      "typeId": 4,
+      "title": "Other Activities",
+      "isSelected": false,
+      "isClicked": false,
+      "total": 0,
+      "no_of_ques": 3,
+      "no_of_anaswer": 0,
+      "alias": "otherActivities"
+    },
+
+    {
+      "typeId": 5,
+      "title": "Other Activities",
+      "isSelected": false,
+      "isClicked": false,
+      "total": 0,
+      "no_of_ques": 3,
+      "no_of_anaswer": 0,
+      "alias": "otherActivities"
+    }
+  ]
+}

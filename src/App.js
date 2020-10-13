@@ -1,26 +1,82 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import DataEstimator from './dataEstimator/DataEstimator';
+
+import RollingNumbers from './RollingNumbers';
 
 function App() {
+  const [price, setPrice] = React.useState(0);
+  const [prev, setPrev] = React.useState(10);
+
+  const [slide, setSlide] = React.useState(10);
+
+  var callClass;
+  if (prev > price) {
+    callClass = 'numberDown';
+    setTimeout(() => {
+      callClass = 'number';
+    }, 1000);
+  } else if (prev < price) {
+    callClass = 'numberUp';
+    setTimeout(() => {
+      callClass = 'number';
+    }, 1000);
+  } else {
+    callClass = 'number';
+  }
+
+  const handleNumberChange = (value) => {
+    setPrev(price);
+    setPrice(value);
+  };
+  const handleNumberUp = () => {
+    setPrev(price);
+    setPrice(price + 1);
+  };
+  const handleNumberDown = () => {
+    setPrev(price);
+    setPrice(price - 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <DataEstimator />
     </div>
   );
 }
 
 export default App;
+
+// <div>
+//   <SliderCustom min={0} max={100} step={0.5} onChange={(value) => handleNumberChange(value)} />
+// </div>
+// {price}
+// <RollingNumbers price={price} prev={prev} callClass={callClass} />
+// <Activities />
+/*<h2>price</h2>
+
+
+      <button onClick={handleNumberUp}>Plus</button>
+      <button onClick={handleNumberDown}>Minus</button>
+      <SliderCustom />*/
+
+// <Slider
+//   x={slide}
+//   styles={{
+//     track: {
+//       backgroundColor: 'gray',
+//     },
+//     active: {
+//       backgroundColor: 'blue',
+//     },
+//     thumb: {
+//       width: 20,
+//       height: 20,
+//     },
+//   }}
+//   xmin={0}
+//   xmax={24}
+//   xstep={0.5}
+//   onChange={({ x }) => setSlide(parseFloat(x.toFixed(2)))}
+// />
