@@ -2,8 +2,9 @@ import React from 'react';
 
 import './App.css';
 import DataEstimator from './dataEstimator/DataEstimator';
-
+import { DataController } from './context';
 import RollingNumbers from './RollingNumbers';
+import Example from './contextExample/Example';
 
 function App() {
   const [price, setPrice] = React.useState(0);
@@ -11,38 +12,38 @@ function App() {
 
   const [slide, setSlide] = React.useState(10);
 
-  var callClass;
-  if (prev > price) {
-    callClass = 'numberDown';
-    setTimeout(() => {
-      callClass = 'number';
-    }, 1000);
-  } else if (prev < price) {
-    callClass = 'numberUp';
-    setTimeout(() => {
-      callClass = 'number';
-    }, 1000);
-  } else {
-    callClass = 'number';
-  }
+  // var callClass;
+  // if (prev > price) {
+  //   callClass = 'numberDown';
+  //   setTimeout(() => {
+  //     callClass = 'number';
+  //   }, 1000);
+  // } else if (prev < price) {
+  //   callClass = 'numberUp';
+  //   setTimeout(() => {
+  //     callClass = 'number';
+  //   }, 1000);
+  // } else {
+  //   callClass = 'number';
+  // }
 
-  const handleNumberChange = (value) => {
-    setPrev(price);
-    setPrice(value);
-  };
-  const handleNumberUp = () => {
-    setPrev(price);
-    setPrice(price + 1);
-  };
-  const handleNumberDown = () => {
-    setPrev(price);
-    setPrice(price - 1);
-  };
+  // const handleNumberChange = (value) => {
+  //   setPrev(price);
+  //   setPrice(value);
+  // };
+  // const handleNumberUp = () => {
+  //   setPrev(price);
+  //   setPrice(price + 1);
+  // };
+  // const handleNumberDown = () => {
+  //   setPrev(price);
+  //   setPrice(price - 1);
+  // };
 
   return (
-    <div className='App'>
+    <DataController>
       <DataEstimator />
-    </div>
+    </DataController>
   );
 }
 
@@ -55,6 +56,12 @@ export default App;
 // <RollingNumbers price={price} prev={prev} callClass={callClass} />
 // <Activities />
 /*<h2>price</h2>
+
+
+
+
+
+
 
 
       <button onClick={handleNumberUp}>Plus</button>

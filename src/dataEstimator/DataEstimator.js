@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import PageStepper from './pageStepper/PageStepper';
+import DataAmount from './shared/DataAmount';
+import PlanRecommendation from './PlanRecommendation';
 
-import * as vm from '../dataEstimator.json';
-const { activityTypes } = vm.default;
+import { EstimatorContext } from '../context';
 
 const Options = ({ typeId, title, isSelected, alias, callback }) => (
   <div className='options' onClick={() => callback(alias)}>
-    {console.log(isSelected)}
-    <span className={isSelected ? 'checkbox' : 'outline'}>{typeId}</span>
+    <span className='outline'>{typeId}</span>
     <span>{title}</span>
   </div>
 );
 
-const Activities = ({ callback }) => {
+const Activities = ({ callback, dataAmount }) => {
+  const context = useContext(EstimatorContext);
+  const { activityTypes } = context.state;
   return (
     <div className='estimator'>
       <div className='description'>
@@ -47,41 +49,45 @@ const Activities = ({ callback }) => {
             );
           })}
         </div>
-        <div className='total-data'>
-          Est <b>125GB</b> Mo
-        </div>
+        <DataAmount dataAmount={dataAmount} />
       </div>
+      <button onClick={() => context.resetValues()}>Reset values</button>
+      <button>Recommend Plan</button>
     </div>
   );
 };
 
 const DataEstimator = () => {
   const [options, setOptions] = useState(true);
+
   const [activeComponent, setActiveComponent] = useState(null);
+  const [data, setData] = useState(0);
 
   const handleCallback = (name) => {
-    const comp = vm.default[name];
-
-    setActiveComponent(comp);
+    // const comp = plans[name];
+    setActiveComponent(name);
   };
 
   const handleOptionsPath = () => {
     setOptions(true);
+
     setActiveComponent(null);
   };
+
   useEffect(() => {
     if (activeComponent !== null) setOptions(false);
   }, [activeComponent]);
+
   return (
-    <>
+    <div className='Est-App'>
       {options ? (
-        <Activities callback={handleCallback} />
+        <Activities callback={handleCallback} dataAmount={data} />
       ) : (
         <PageStepper lists={activeComponent} optionsCallback={handleOptionsPath} />
       )}
-    </>
+    </div>
   );
 };
 
 export default DataEstimator;
-//
+// <PlanRecommendation />

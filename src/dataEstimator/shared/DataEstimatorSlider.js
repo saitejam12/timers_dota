@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
@@ -25,18 +25,26 @@ const handle = (props) => {
   );
 };
 
-const DataEstimatorSlider = ({ value, options }) => {
-  const [slide, setSlide] = useState(value);
+const DataEstimatorSlider = ({ value, options, handleChange }) => {
+  const sliderchange = (x) => {
+    let val = parseFloat(x.toFixed(options.precision));
+
+    handleChange(val);
+  };
+
   return (
     <div>
       <Slider
         className='stepper_slider'
-        value={slide}
+        value={value}
         min={options.floor}
         max={options.ceil}
         step={options.step}
-        handle={handle}
-        onChange={(x) => setSlide(parseFloat(x.toFixed(options.precision)))}
+        // handle={handle}
+        marks={options.ceil === 24 ? marksTime : marksSocial}
+        onChange={(x) => {
+          sliderchange(x);
+        }}
       />
     </div>
   );
